@@ -1,17 +1,15 @@
 const containerSenha = document.querySelector('.password-container-containerPed');
 const botaoSenha = document.getElementById('unlock-button');
 const senhaInput = document.getElementById('password');
-let senha = "paçoca";
+const senhaCorreta = "paçoca";
 
-botaoSenha.addEventListener('click', function() {
-    togglePasswordVisibility();
-});
-
-function togglePasswordVisibility() {
-    if (senhaInput.value === senha) {
+botaoSenha.addEventListener('click', () => {
+    if (senhaInput.value === senhaCorreta) {
         containerSenha.classList.add('hidden');
-        containerSenha.classList.remove('password-container-container');
+        containerSenha.classList.remove('password-container-containerPed');
     } else {
         alert('Senha incorreta!');
+        senhaInput.value = '';
+        senhaInput.focus();
     }
-}
+});
